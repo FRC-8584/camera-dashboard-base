@@ -1,15 +1,16 @@
 @use "../abstracts/variables" as *;
 
 .panel-section {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .panel-section[data-section="logs"] {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-  height: 100%;
+    user-select: text;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    height: 100%;
 }
 
 .btn-clear {
