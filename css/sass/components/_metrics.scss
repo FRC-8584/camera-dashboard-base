@@ -1,22 +1,22 @@
 @use "../abstracts/variables" as *;
 
 .camera-status {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  display: flex;
-  gap: 12px;
-  padding: 8px 12px;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
-  border-radius: $radius-sm;
-  font-size: 13px;
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    display: flex;
+    gap: 12px;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    border-radius: $radius-sm;
+    font-size: 13px;
 }
 
 .metric {
-  color: $text-muted;
+    color: $text-muted;
 
-  b {
-    color: $text-main;
-  }
+    b {
+        color: $text-main;
+    }
 }

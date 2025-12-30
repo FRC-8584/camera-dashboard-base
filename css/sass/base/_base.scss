@@ -1,9 +1,9 @@
 @use "../abstracts/variables" as *;
 
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Arial, sans-serif;
-  background: $bg-root;
-  color: $text-main;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Arial, sans-serif;
+    background: $bg-root;
+    color: $text-main;
 }

@@ -1,5 +1,17 @@
 @use "../abstracts/variables" as *;
 
+.panel-section {
+  overflow: hidden;
+}
+
+.panel-section[data-section="logs"] {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+}
+
 .btn-clear {
     display: inline-flex;
     align-items: center;
@@ -27,25 +39,34 @@
     }
 }
 
+
 .log-box {
-    margin: 12px 0 0;
-    padding: 12px;
+    flex: 1;
+    min-height: 0;
 
-    height: calc(100vh - 56px - 16px - 16px - 44px - 24px);
-    /* 56 header + main padding + tabs height(約44) + section padding(約24) */
+    overflow-x: auto;
+    overflow-y: auto;
 
-    border-radius: $radius-sm;
-    border: 1px solid $border-color;
-    background: rgba(0, 0, 0, 0.25);
+    white-space: pre;
+    word-break: normal;
 
-    color: $text-main;
-    font-size: 12px;
-    line-height: 1.45;
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
 
-    overflow: auto;
-    white-space: pre-wrap;
-    word-break: break-word;
+    &::-webkit-scrollbar:vertical {
+        width: 0;
+    }
 
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-        "Liberation Mono", "Courier New", monospace;
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.28);
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
 }

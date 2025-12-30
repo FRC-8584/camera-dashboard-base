@@ -1,15 +1,15 @@
 @use "../abstracts/variables" as *;
 
 @mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @mixin panel {
-  background: $bg-panel;
-  border-radius: $radius;
-  border: 1px solid $border-color;
-  box-shadow: $shadow-soft;
-  overflow: hidden;
+    background: $bg-panel;
+    border-radius: $radius;
+    border: 1px solid $border-color;
+    box-shadow: $shadow-soft;
+    overflow: hidden;
 }

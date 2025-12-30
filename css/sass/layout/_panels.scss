@@ -8,23 +8,37 @@
     min-height: 0;
 }
 
+.panel,
+.panel-left,
+.panel-right,
+.panel-body,
+.panel-section {
+    min-height: 0;
+}
+
 .panel-left {
     position: relative;
-    min-height: 0;
 }
 
 .panel-right {
     background: $bg-panel-alt;
-    min-height: 0;
 }
 
 .panel-body {
     flex: 1;
-    min-height: 0;
     overflow: hidden;
 }
 
 .panel-section {
-    height: 100%;
-    overflow: auto;
+    overflow: hidden;
+}
+
+.panel-section[data-section="logs"] {
+    display: flex;
+    flex-direction: column;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;  
 }

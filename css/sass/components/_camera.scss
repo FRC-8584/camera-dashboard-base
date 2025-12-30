@@ -36,3 +36,7 @@
 .camera-frame:not([data-empty="1"]) .camera-placeholder{
     display: none;
 }
+
+.panel-left {
+    min-height: 0;
+}
