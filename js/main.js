@@ -46,26 +46,6 @@ const ws = createWS({
                 case "metrics":
                     updateMetrics(msg);
                     return;
-
-                case "ack":
-                    appendLog({ source: "server", scope: "ack", message: `${msg.req} ok` });
-                    return;
-
-                case "error":
-                    appendLog({
-                        source: "server",
-                        level: "error",
-                        scope: msg.req || "error",
-                        message: msg.message,
-                    });
-                    return;
-
-                case "state":
-                    Object.assign(state, msg.stream || {}, msg.params || {});
-                    pipelineStore.commitActivePresetFromState();
-                    appendLog({ source: "server", scope: "state", message: "state synced" });
-                    tabsCtrl.rerenderActiveTab();
-                    return;
             }
         } catch {}
 
