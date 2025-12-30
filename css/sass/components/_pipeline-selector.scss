@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as *;
+
+.pipeline-selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pipeline-label {
+  font-size: 14px;
+  color: $text-muted;
+}
+
+.pipeline-select {
+  background: $bg-panel;
+  border: 1px solid $border-color;
+  color: $text-main;
+  padding: 6px 12px;
+  border-radius: $radius-sm;
+
+  &:focus {
+    outline: none;
+    border-color: $accent;
+  }
+}

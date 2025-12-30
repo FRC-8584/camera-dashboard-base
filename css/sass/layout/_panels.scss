@@ -1,0 +1,16 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.panel {
+  @include panel;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-left {
+  position: relative;
+}
+
+.panel-right {
+  background: $bg-panel-alt;
+}
