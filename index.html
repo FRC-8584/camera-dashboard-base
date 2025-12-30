@@ -6,7 +6,7 @@
         <title>Dashboard</title>
         <link rel="stylesheet" href="css/main.css" />
     </head>
-
+    <script type="module" src="js/main.js"></script>
     <body class="dashboard">
         <header class="dashboard-header">
             <div class="pipeline-selector">
@@ -24,7 +24,11 @@
         <main class="dashboard-main">
             <!-- Left panel -->
             <section class="panel panel-left" aria-label="Camera view">
-                <video class="camera-stream" autoplay muted playsinline></video>
+                <div class="camera-frame" data-empty="1">
+                    <img class="camera-stream" alt="" />
+                    <div class="camera-placeholder">Waiting for stream…</div>
+                </div>
+
 
                 <div class="camera-status">
                     <span class="metric metric-tx">TX: <b>N/A</b></span>
@@ -33,7 +37,8 @@
                     <span class="metric metric-latency">Latency: <b>N/A</b></span>
                 </div>
             </section>
-
+            
+            <!-- Right panel -->
             <section class="panel panel-right" aria-label="Controls">
                 <nav class="panel-tabs" aria-label="Control tabs">
                     <button class="tab is-active" type="button" data-tab="parameters">
