@@ -1,0 +1,40 @@
+.doc-image {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+
+    width: 64px;
+    height: auto;
+
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+
+    z-index: 1000;
+    user-select: none;
+}
+
+.doc-image:hover {
+    opacity: 0.9;
+}
+
+.doc-image-wrap {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1000;
+}
+
+.doc-image {
+    width: 150px;
+    opacity: 0.3;
+    transition: opacity 0.2s ease;
+    pointer-events: auto;
+}
+
+.doc-image-wrap {
+    pointer-events: none;
+}
+
+.doc-image-wrap:hover .doc-image {
+    opacity: 1;
+}
