@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+
+    <body class="dashboard">
+        <header class="dashboard-header">
+            <div class="pipeline-selector">
+                <label class="pipeline-label" for="pipeline">Pipeline</label>
+                <select class="pipeline-select" id="pipeline">
+                    <option value="pipeline1">1</option>
+                    <option value="pipeline2">2</option>
+                    <option value="pipeline3">3</option>
+                    <option value="pipeline4">4</option>
+                    <option value="pipeline5">5</option>
+                </select>
+            </div>
+        </header>
+
+        <main class="dashboard-main">
+            <!-- Left panel -->
+            <section class="panel panel-left" aria-label="Camera view">
+                <video class="camera-stream" autoplay muted playsinline></video>
+
+                <div class="camera-status">
+                    <span class="metric metric-tx">TX: <b>N/A</b></span>
+                    <span class="metric metric-ty">TY: <b>N/A</b></span>
+                    <span class="metric metric-fps">FPS: <b>N/A</b></span>
+                    <span class="metric metric-latency">Latency: <b>N/A</b></span>
+                </div>
+            </section>
+
+            <section class="panel panel-right" aria-label="Controls">
+                <nav class="panel-tabs" aria-label="Control tabs">
+                    <button class="tab is-active" type="button" data-tab="parameters">
+                        Parameters
+                    </button>
+                    <button class="tab" type="button" data-tab="logs">
+                        Logs
+                    </button>
+                </nav>
+
+                <div class="panel-body" id="panel-body">
+                    <section class="panel-section" data-section="parameters"></section>
+                    <section class="panel-section hidden" data-section="logs"></section>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
