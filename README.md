@@ -2,7 +2,8 @@
 ## WS
 
 `ws://127.0.0.1:8080/ws`
-
+> main.js 18:1 可以調整
+> const WS_URL = "ws://127.0.0.1:8080/ws";
 ---
 
 ## To Backend
