@@ -1,6 +1,6 @@
 export const state = {
     fps: 30,
-    resolution: "1280x720",
+    resolution: "640x480",
     exposure_ev: 0.0,
     brightness: 50,
     contrast: 50,

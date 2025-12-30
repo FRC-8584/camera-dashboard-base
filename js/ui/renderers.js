@@ -15,9 +15,8 @@ export function createRenderers({
                     <div class="field">
                         <label for="resolution">Resolution</label>
                         <select id="resolution">
+                            <option value="320x240">320x240</option>
                             <option value="640x480">640x480</option>
-                            <option value="1280x720">1280x720</option>
-                            <option value="1920x1080">1920x1080</option>
                         </select>
                     </div>
 
