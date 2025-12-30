@@ -1,0 +1,90 @@
+@use "../abstracts/variables" as *;
+
+.panel-section {
+    padding: 14px 16px;
+}
+
+.panel-section h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 650;
+}
+
+.group {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid $border-color;
+    border-radius: $radius-sm;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+.group h4 {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: $text-muted;
+    letter-spacing: 0.2px;
+}
+
+.field {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px 12px;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.group .field:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.field label {
+    grid-column: 1 / -1;
+    font-size: 13px;
+    color: $text-muted;
+}
+
+.field select,
+.field input[type="range"] {
+    width: 100%;
+}
+
+.field select {
+    appearance: none;
+    background: $bg-panel;
+    border: 1px solid $border-color;
+    color: $text-main;
+    padding: 8px 10px;
+    border-radius: $radius-sm;
+    font-size: 14px;
+
+    &:focus {
+        outline: none;
+        border-color: $accent;
+    }
+}
+
+.field input[type="range"] {
+    height: 22px;
+    background: transparent;
+    accent-color: $accent;
+}
+
+.field input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: $accent;
+}
+
+.value {
+    justify-self: end;
+    font-size: 12px;
+    color: $text-main;
+    opacity: 0.85;
+    padding: 4px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 999px;
+}

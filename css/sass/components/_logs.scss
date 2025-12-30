@@ -1,0 +1,51 @@
+@use "../abstracts/variables" as *;
+
+.btn-clear {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 8px 12px;
+    border-radius: $radius-sm;
+    border: 1px solid $border-color;
+
+    background: rgba(255, 255, 255, 0.03);
+    color: $text-main;
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    &:hover {
+        border-color: rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+}
+
+.log-box {
+    margin: 12px 0 0;
+    padding: 12px;
+
+    height: calc(100vh - 56px - 16px - 16px - 44px - 24px);
+    /* 56 header + main padding + tabs height(約44) + section padding(約24) */
+
+    border-radius: $radius-sm;
+    border: 1px solid $border-color;
+    background: rgba(0, 0, 0, 0.25);
+
+    color: $text-main;
+    font-size: 12px;
+    line-height: 1.45;
+
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+}

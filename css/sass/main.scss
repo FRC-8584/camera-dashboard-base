@@ -5,14 +5,17 @@
 /* base */
 @use "base/reset";
 @use "base/base";
+@use "base/utilities";
 
 /* layout */
-@use "layout/dashboard";
 @use "layout/header";
+@use "layout/dashboard";
 @use "layout/panels";
 
 /* components */
-@use "components/pipeline-selector";
-@use "components/tabs";
 @use "components/camera";
 @use "components/metrics";
+@use "components/pipeline-selector";
+@use "components/tabs";
+@use "components/controls";
+@use "components/logs";

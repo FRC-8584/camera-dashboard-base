@@ -1,6 +1,38 @@
-.camera-stream {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: black;
+.camera-frame{
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    overflow: hidden;
+}
+
+.camera-stream{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.camera-frame[data-empty="1"] .camera-stream{
+    display: none;
+}
+
+.camera-placeholder{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: system-ui, sans-serif;
+    text-align: center;
+    pointer-events: none;
+}
+
+.camera-frame:not([data-empty="1"]) .camera-placeholder{
+    display: none;
 }
