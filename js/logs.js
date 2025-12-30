@@ -14,8 +14,15 @@ export function appendLog({ source = "website", level = "info", scope = "system"
 
     const logBox = document.querySelector('.panel-section[data-section="logs"] .log-box');
     if (logBox) {
+        const threshold = 24; // px
+        const atBottom =
+            logBox.scrollTop + logBox.clientHeight >= logBox.scrollHeight - threshold;
+        
         logBox.textContent = logBuffer.join("\n") + "\n";
-        logBox.scrollTop = logBox.scrollHeight;
+        
+        if (atBottom) {
+            logBox.scrollTop = logBox.scrollHeight;
+        }
     }
 }
 
