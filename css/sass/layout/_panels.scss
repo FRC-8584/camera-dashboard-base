@@ -8,29 +8,47 @@
     min-height: 0;
 }
 
-.panel,
-.panel-left,
-.panel-right,
-.panel-body,
-.panel-section {
-    min-height: 0;
-}
-
 .panel-left {
     position: relative;
+    min-height: 0;
 }
 
 .panel-right {
     background: $bg-panel-alt;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-tabs {
+    flex: 0 0 auto;
 }
 
 .panel-body {
     flex: 1;
-    overflow: hidden;
+    min-height: 0;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.28);
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
 }
 
 .panel-section {
-    overflow: hidden;
+    min-height: 0;
 }
 
 .panel-section[data-section="logs"] {
@@ -38,7 +56,8 @@
     flex-direction: column;
 }
 
-.panel {
-    display: flex;
-    flex-direction: column;  
+.panel-section[data-section="logs"] .log-box {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
 }
