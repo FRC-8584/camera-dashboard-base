@@ -141,3 +141,12 @@ applyStream();
 applyParams();
 
 tabsCtrl.showTab(document.querySelector(".tab.is-active")?.dataset.tab ?? "parameters");
+
+// document
+document.getElementById("doc-button").addEventListener("click", () => {
+  window.open(
+    "https://github.com/FRC-8584/camera-dashboard-base",
+    "_blank",
+    "noopener,noreferrer"
+  );
+});
