@@ -47,6 +47,8 @@
 | `image`   | Camera 影像畫面（Base64 image frame）    |
 | `metrics` | 偵測結果與效能指標（tx / ty / fps / latency） |
 | `log`     | 後端 Log 訊息                        |
+| `ack`     | 後端回覆「某次 request 已成功處理」(對應前端送出的 type / ts) |
+| `state`   | 後端主動/被動同步「目前後端實際套用的 stream/params 狀態」給前端  |
 
 ### Examples
 
@@ -74,5 +76,41 @@
   "level": "info",
   "scope": "detector",
   "message": "object detected"
+}
+```
+
+```
+{
+  "type": "ack",
+  "req": "stream",
+  "ts": 1735650000123
+}
+
+// or
+
+{
+  "type": "ack",
+  "req": "params",
+  "ts": 1735650000456
+}
+```
+
+```
+{
+  "type": "state",
+  "stream": {
+    "fps": 30,
+    "resolution": "1280x720",
+    "width": 1280,
+    "height": 720
+  },
+  "params": {
+    "exposure_ev": 0.0,
+    "brightness": 50,
+    "contrast": 50,
+    "saturation": 50,
+    "wb_auto": true,
+    "wb_temperature": 5000
+  }
 }
 ```
