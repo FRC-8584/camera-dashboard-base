@@ -46,6 +46,26 @@ const ws = createWS({
                 case "metrics":
                     updateMetrics(msg);
                     return;
+
+                case "ack":
+                    appendLog({ source: "server", scope: "ack", message: `${msg.req} ok` });
+                    return;
+
+                case "error":
+                    appendLog({
+                        source: "server",
+                        level: "error",
+                        scope: msg.req || "error",
+                        message: msg.message,
+                    });
+                    return;
+
+                case "state":
+                    Object.assign(state, msg.stream || {}, msg.params || {});
+                    pipelineStore.commitActivePresetFromState();
+                    appendLog({ source: "server", scope: "state", message: "state synced" });
+                    tabsCtrl.rerenderActiveTab();
+                    return;
             }
         } catch {}
 
@@ -121,12 +141,3 @@ applyStream();
 applyParams();
 
 tabsCtrl.showTab(document.querySelector(".tab.is-active")?.dataset.tab ?? "parameters");
-
-// document
-document.getElementById("doc-button").addEventListener("click", () => {
-  window.open(
-    "https://github.com/FRC-8584/camera-dashboard-base",
-    "_blank",
-    "noopener,noreferrer"
-  );
-});
