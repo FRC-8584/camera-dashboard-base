@@ -9,9 +9,25 @@
 
 .dashboard-main {
     flex: 1;
-    min-height: 0;
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 16px;
     padding: 16px;
+    min-height: 0;
+}
+
+@media (max-width: 1200px) {
+    .dashboard-main {
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(480px, auto) 1fr;
+    }
+
+    .panel-left {
+        grid-row: 1;
+    }
+
+    .panel-right {
+        grid-row: 2;
+        min-height: 0;
+    }
 }
