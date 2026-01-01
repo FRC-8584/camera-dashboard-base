@@ -49,6 +49,7 @@
 | `log`     | 後端 Log 訊息                        |
 | `ack`     | 後端回覆「某次 request 已成功處理」(對應前端送出的 type / ts) |
 | `state`   | 後端主動/被動同步「目前後端實際套用的 stream/params 狀態」給前端  |
+| `error`   | 後端的錯誤訊息  |
 
 ### Examples
 
@@ -112,5 +113,13 @@
     "wb_auto": true,
     "wb_temperature": 5000
   }
+}
+```
+
+```
+{
+  "type": "error",
+  "req": "params",
+  "message": "Exposure value out of range"
 }
 ```
